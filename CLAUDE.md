@@ -55,4 +55,34 @@
 
 ## 開発環境
 
-（プロジェクト固有の情報をここに追記してください）
+```bash
+npm run dev      # 開発サーバー起動 (http://localhost:5173)
+npm run build    # 本番ビルド (dist/ に出力)
+npm run preview  # ビルド結果をローカルでプレビュー
+```
+
+## 技術スタック
+
+| 用途 | 技術 |
+|------|------|
+| UI ライブラリ | React 19 |
+| ビルドツール | Vite 8 |
+| 言語 | JavaScript (JSX) |
+| スタイリング | CSS (コンポーネントごとに `.css` ファイルを同梱) |
+| データ永続化 | localStorage |
+| CI/CD | GitHub Actions |
+
+## デプロイ先
+
+https://tmm7w7c.github.io/task-board/
+
+`main` ブランチへの push で GitHub Actions が自動的にビルド・デプロイする。
+
+## コンポーネントの命名規約
+
+- **ファイル名**: PascalCase（例: `TaskItem.jsx`）
+- **コンポーネント名**: ファイル名と一致させる（例: `function TaskItem()`）
+- **CSS ファイル**: コンポーネントと同名（例: `TaskItem.css`）
+- **CSS クラス名**: kebab-case（例: `.task-item`, `.add-btn`）
+- **props / 変数名**: camelCase（例: `onDelete`, `isCompleted`）
+- **イベントハンドラ**: `handle` プレフィックス（例: `handleKeyDown`, `handleSubmit`）
